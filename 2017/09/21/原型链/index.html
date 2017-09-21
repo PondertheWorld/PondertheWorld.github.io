@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="javascript原型链&amp;amp;emsp本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
+<meta name="description" content="javascript原型链&amp;emsp;本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp;原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 一 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型链">
 <meta property="og:url" content="http://yoursite.com/2017/09/21/原型链/index.html">
 <meta property="og:site_name" content="PondertheWorld">
-<meta property="og:description" content="javascript原型链&amp;amp;emsp本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
+<meta property="og:description" content="javascript原型链&amp;emsp;本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp;原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 一 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y.photo.qq.com/img?s=vr4I9XXnu&l=y.jpg">
-<meta property="og:updated_time" content="2017-09-21T06:39:06.000Z">
+<meta property="og:updated_time" content="2017-09-21T06:41:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链">
-<meta name="twitter:description" content="javascript原型链&amp;amp;emsp本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
+<meta name="twitter:description" content="javascript原型链&amp;emsp;本文系个人学习总结，如有错误之处，请读者指正，不胜感激。$emsp;原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。 一 工厂模式&amp;emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个name属性和一个叫做outPut">
 <meta name="twitter:image" content="http://y.photo.qq.com/img?s=vr4I9XXnu&l=y.jpg">
 
 
@@ -355,8 +355,8 @@
 
       
         <p><img src="http://y.photo.qq.com/img?s=vr4I9XXnu&l=y.jpg"></p>
-<h1 id="javascript原型链"><a href="#javascript原型链" class="headerlink" title="javascript原型链"></a>javascript原型链</h1><p>&amp;emsp本文系个人学习总结，如有错误之处，请读者指正，不胜感激。<br>$emsp原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。</p>
-<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>&emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个<em>name</em>属性和一个叫做outPut的方法，那么我可以这样写<br>    var person=Object();<br>    person.name=’Steven’;<br>    person.outPut=function(){console.log(name);}; //Steven<br>这样就创建一个name是Steven对象，那么我想再创建一个‘zhangsan’呢，再来十个‘lisi’呢，显然这种原始的方式是不可取的，太麻烦。于是就有了一种批量创建对象的方法，这就是工厂模式。</p>
+<h1 id="javascript原型链"><a href="#javascript原型链" class="headerlink" title="javascript原型链"></a>javascript原型链</h1><p>&emsp;本文系个人学习总结，如有错误之处，请读者指正，不胜感激。<br>$emsp;原型链是javascript中很重要的一个概念，编程语言中的各种特性都是为了解决问题而出现的，原型链也不例外。我打算从问题的最开始来讲原型链的概念。</p>
+<h2 id="一-工厂模式"><a href="#一-工厂模式" class="headerlink" title="一 工厂模式"></a>一 工厂模式</h2><p>&emsp;创建一个对象对js来说是一件很简单的事情，我现在想创建一个person对象，它有一个<em>name</em>属性和一个叫做outPut的方法，那么我可以这样写<br>    var person=Object();<br>    person.name=’Steven’;<br>    person.outPut=function(){console.log(name);}; //Steven<br>这样就创建一个name是Steven对象，那么我想再创建一个‘zhangsan’呢，再来十个‘lisi’呢，显然这种原始的方式是不可取的，太麻烦。于是就有了一种批量创建对象的方法，这就是工厂模式。</p>
 
       
     </div>
@@ -529,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript原型链"><span class="nav-number">1.</span> <span class="nav-text">javascript原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.1.</span> <span class="nav-text">工厂模式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript原型链"><span class="nav-number">1.</span> <span class="nav-text">javascript原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-工厂模式"><span class="nav-number">1.1.</span> <span class="nav-text">一 工厂模式</span></a></li></ol></li></ol></div>
             
 
           </div>
