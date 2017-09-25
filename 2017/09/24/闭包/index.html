@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程序设计">
+<meta name="description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 #  作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript执行环境,作用域链,变量对象，垃圾回收，闭包">
 <meta property="og:url" content="http://yoursite.com/2017/09/24/闭包/index.html">
 <meta property="og:site_name" content="PondertheWorld">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程序设计">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 #  作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T09:46:43.000Z">
+<meta property="og:updated_time" content="2017-09-25T10:01:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript执行环境,作用域链,变量对象，垃圾回收，闭包">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程序设计">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文为个人学习总结，如有错误，欢迎批评指正。&amp;emsp;&amp;emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。 #  作用域&amp;emsp;&amp;emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程">
 
 
 
@@ -353,6 +353,7 @@
 
       
         <p>&emsp;&emsp;本文为个人学习总结，如有错误，欢迎批评指正。<br>&emsp;&emsp;这里想总结一下javascript闭包的概念，但是闭包和作用域，变量对象，执行环境，垃圾回收都有莫大的关系，所以我打算从这几个概念来自然的引出闭包这个概念。</p>
+<p># </p>
 <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>&emsp;&emsp;作用域，顾名思义，就是代码的作用范围，它决定了标识符(包括变量，常量，函数名等)在程序中可以被使用等区域，在许多程序设计语言中，作用域都是类似的概念。javascript的作用域有全局作用域，局部作用域，代码块作用域。</p>
 <h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>&emsp;&emsp;作用域是可以嵌套的，一个作用域里可以嵌套另一个作用域，一般来说，内层的作用域中的标识符不可以在外层使用，而外层的作用域的标识符可以在内层使用(通过作用域链实现)。最外层的作用域是全局作用域,也就是说全局作用域的标识符可以在任何地方访问到。</p>
 <h3 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h3><p>&emsp;&emsp;javascript的局部作用域有函数作用域(我认为eval作用域是函数作用域)和代码块作用域(在ES6以前代码块作用域要通过模拟块作用域实现)。</p>
